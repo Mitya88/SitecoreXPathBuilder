@@ -11,7 +11,7 @@ The repository contains source code and documentation for the Sitecore XPathBuil
 
 # Introduction
 
-* [BlogPost](https://tinyurl.com/ybq26ay8)
+* [BlogPost](https://medium.com/@mitya_1988/sitecore-xpathbuilder-with-new-look-ab66ef859692)
 
 
 ## Purpose
