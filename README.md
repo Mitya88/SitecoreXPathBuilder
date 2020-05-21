@@ -11,8 +11,6 @@ The repository contains source code and documentation for the Sitecore XPathBuil
 
 # Introduction
 
-TODO
-
 * [BlogPost](https://tinyurl.com/ybq26ay8)
 
 
@@ -40,7 +38,7 @@ Provide detailed instructions on how to install the module, and include screensh
 
 1. Use the Sitecore Installation wizard to install the [package](sc.package/Sitecore.XPathBuilder-1.0.zip)
 2. Make sure if your search indexes are working correctly
-3. Go the LaunchPad and open the Healthcheck
+3. Go the LaunchPad and open the XPath application
 
 ### Configuration files
 The package contains a configuration patch, which sets the "Sitecore.Services.SecurityPolicy" to "ServicesOnPolicy" - it is required for the Speak application.
@@ -68,6 +66,6 @@ If you want to enhance or contribute into the module, you should perform the fol
 - make sure you are using node version 8.x
 - run "npm install" in the folder
 - run "npm run build" command
-- Copy the DIST folder content to \sitecore\shell\client\Applications\xpathbuilder\ (Create the healthcheck folder)
+- Copy the DIST folder content to \sitecore\shell\client\Applications\xpathbuilder\ (Create the xpath folder)
 - Open in http://sc.local/sitecore/shell/client/Applications/xpathbuilder/ url
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, ValueProvider } from '@angular/core';
 import { XPathBuilderService } from '../xpathbuilder.service';
-import { NavigationModel, ItemWebApiResponse, NavigationWrapper, ItemModel, ItemWebApiResult } from '../navigation';
+import { ItemModel, ItemWebApiResult } from '../models';
 import { SciLogoutService } from '@speak/ng-sc/logout';
 
 @Component({
@@ -14,7 +14,6 @@ export class StartPageComponent implements OnInit {
   isActive: boolean;
   isEditing = false;
   itemWebApiResponse: ItemWebApiResult;
-  list2: NavigationWrapper;
   query = '';
   displayTree: boolean;
   selectedDatabase = "master";
@@ -23,7 +22,9 @@ export class StartPageComponent implements OnInit {
   queryResult: any;
   errorMessage: string;
 
-  constructor(private xPathBuilderService: XPathBuilderService, public logoutService: SciLogoutService) { this.displayTree = false; }
+  constructor(private xPathBuilderService: XPathBuilderService, public logoutService: SciLogoutService) {
+    this.displayTree = false;
+  }
 
   ngOnInit() {
     this.initTreeLoad();
@@ -34,7 +35,6 @@ export class StartPageComponent implements OnInit {
   }
 
   initTreeLoad() {
-    this.list2 = { items: [] };
     var result = this.xPathBuilderService.fetchItems('/sitecore/*', this.selectedDatabase, null).subscribe({
       next: response => {
         console.log(response);
@@ -62,7 +62,7 @@ export class StartPageComponent implements OnInit {
     }
     item.State = "expanded";
 
-    var result = this.xPathBuilderService.fetchItems(item.Path + '/*', this.selectedDatabase, null).subscribe({
+    var result = this.xPathBuilderService.fetchItems('./*', this.selectedDatabase, item.ID).subscribe({
       next: response => {
         var itemWebApiResponse = response as ItemWebApiResult;
         item.Children = itemWebApiResponse.Items;
