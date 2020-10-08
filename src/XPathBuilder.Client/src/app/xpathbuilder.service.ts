@@ -8,9 +8,7 @@ export class XPathBuilderService {
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "/sitecore/api/ssc/xpathbuilderspeak/query?sc_site=shell";
 
-    if (window.location.origin.indexOf('localhost') > -1) {
-      this.baseUrl = "https://scsugcon2020.local/sitecore/api/ssc/xpathbuilderspeak/query?sc_site=shell";
-    }
+    
     
   }
 

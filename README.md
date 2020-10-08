@@ -27,6 +27,7 @@ Ability to run Sitecore Queries in the Sitecore Admin.
 - Sitecore 9.1 Update-1
 - Sitecore 9.2
 - Sitecore 9.3 
+- Sitecore 10
 
 ## Releases
 - 1.0  - [package](sc.package/Sitecore.XPathBuilder-1.0.zip)
